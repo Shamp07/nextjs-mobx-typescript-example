@@ -1,0 +1,44 @@
+{
+  "name": "nextjs-mobx-typescript-example",
+  "version": "1.0.0",
+  "description": "nextjs, mobx, typescript example project\u001b",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shamp07/nextjs-mobx-typescript-example.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shamp07/nextjs-mobx-typescript-example/issues"
+  },
+  "homepage": "https://github.com/Shamp07/nextjs-mobx-typescript-example#readme",
+  "dependencies": {
+    "mobx": "^6.1.7",
+    "mobx-react": "^7.1.0",
+    "mobx-react-lite": "^3.2.0",
+    "next": "^10.0.7",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@types/next": "^9.0.0",
+    "@types/node": "^14.14.31",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.15.1",
+    "eslint": "^7.20.0",
+    "eslint-config-airbnb-typescript": "^12.3.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "typescript": "^4.1.5"
+  }
+}
