@@ -1,11 +1,34 @@
+import { enableStaticRendering } from 'mobx-react-lite';
 import CountStore from './CountStore';
+import UserStore, { initialUser } from './UserStore';
 
-class RootStore {
+const isServer = typeof window === 'undefined';
+enableStaticRendering(isServer);
+
+let store: RootStore | null = null;
+const initialRoot = {
+  UserStore: initialUser,
+};
+
+export class RootStore {
   CountStore: CountStore;
 
-  constructor() {
+  UserStore: UserStore;
+
+  constructor(initialData: any) {
     this.CountStore = new CountStore();
+    this.UserStore = new UserStore(initialData.UserStore);
   }
 }
 
-export default new RootStore();
+const initializeStore = (initialData = initialRoot) => {
+  if (isServer) {
+    return new RootStore(initialData);
+  }
+  if (store === null) {
+    store = new RootStore(initialData);
+  }
+  return store;
+};
+
+export default initializeStore;
