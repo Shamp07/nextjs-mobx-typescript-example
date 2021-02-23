@@ -6,6 +6,7 @@ const isServer = typeof window === 'undefined';
 enableStaticRendering(isServer);
 
 let store: RootStore | null = null;
+
 const initialRoot = {
   UserStore: initialUser,
 };
@@ -15,7 +16,7 @@ export class RootStore {
 
   UserStore: UserStore;
 
-  constructor(initialData: any) {
+  constructor(initialData = initialRoot) {
     this.CountStore = new CountStore();
     this.UserStore = new UserStore(initialData.UserStore);
   }

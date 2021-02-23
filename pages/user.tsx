@@ -1,5 +1,6 @@
 import React from 'react';
 import useStores from '../stores/useStores';
+import { MyPageContext } from './_app';
 
 interface UserData {
   id: number;
@@ -25,10 +26,8 @@ const User = () => {
   );
 };
 
-User.getInitialProps = async ({ store }: any) => {
-  const { UserStore } = store;
-  const { getUserList } = UserStore;
-  await getUserList();
+User.getInitialProps = async ({ store }: MyPageContext) => {
+  await store?.UserStore.getUserList();
 
   return {
     props: {},
